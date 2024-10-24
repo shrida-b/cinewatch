@@ -9,16 +9,16 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <div className="App" class="bg-white">
-    <Router>
-       <Navbar />
-      <Routes >
-        <Route path="/" element={<HomePage />} />
-        <Route path="/search" element={<SearchPage />} />
-        <Route path="/bookmarks" element={<BookmarksPage />} />
-        <Route path="/reviews" element={<ReviewsPage />} />
-      </Routes>
-    </Router>
-    <body class="h-screen bg-white" ></body>
+      <Router>
+        <Navbar />
+        <Routes >
+          <Route path="/" element={<HomePage />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/bookmarks" element={<BookmarksPage />} />
+          <Route path="/reviews" element={<ReviewsPage />} />
+        </Routes>
+      </Router>
+      <body class="h-screen bg-white" ></body>
     </div>
   );
 }
