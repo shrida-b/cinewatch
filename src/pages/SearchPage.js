@@ -8,7 +8,7 @@ function SearchPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [notification, setNotification] = useState({ message: '', type: '' });
-
+  //getting movie functionality
   const fetchMovies = async (searchQuery, page = 1) => {
     setLoading(true);
     setError(null);
@@ -45,7 +45,7 @@ function SearchPage() {
       fetchMovies(query);
     }
   };
-
+  //bookmark handling functionality
   const handleBookmark = (movie) => {
     const existingBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
     
@@ -66,6 +66,7 @@ function SearchPage() {
       setNotification({ message: 'movie bookmarked!', type: 'success' });
   };
   
+  // review handling functionality
   const handleAddReview = (movie) => {
     const reviewContent = prompt('Enter your review:');
     if (!reviewContent) return;
