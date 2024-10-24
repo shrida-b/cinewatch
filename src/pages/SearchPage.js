@@ -20,18 +20,18 @@ function SearchPage() {
         setMovies(data.Search);
       } else {
         setMovies([]);
-        setError(data.Error || 'No movies found.');
+        setError(data.Error || 'no movies found.');
       }
     } catch (err) {
-      console.error('Search failed:', err);
-      setError('Failed to fetch movies. Please try again.');
+      console.error('search failed:', err);
+      setError('failed to fetch movies. Please try again.');
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    const defaultQuery = 'Movie';
+    const defaultQuery = 'movie';
     fetchMovies(defaultQuery);
   }, []);
 
@@ -39,7 +39,7 @@ function SearchPage() {
     e.preventDefault();
   
     if (query.trim() === '') {
-      const defaultQuery = 'Movie';
+      const defaultQuery = 'movie';
       fetchMovies(defaultQuery);
     } else {
       fetchMovies(query);
