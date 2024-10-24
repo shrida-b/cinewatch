@@ -5,9 +5,9 @@ export const searchMovies = async (title, page) => {
     method: 'GET',
     url: 'https://movie-database-alternative.p.rapidapi.com/',
     params: {
-      s: title,     // Use the 'title' parameter
+      s: title,
       r: 'json',
-      page: page.toString()  // Ensure 'page' is a string
+      page: page.toString()
     },
     headers: {
       'x-rapidapi-key': '2067b69af2msh4a8f5cf136fc65ep1d4867jsn42d3f0f58bdd',

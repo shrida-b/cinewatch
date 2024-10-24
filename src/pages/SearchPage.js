@@ -31,7 +31,7 @@ function SearchPage() {
   };
 
   useEffect(() => {
-    const defaultQuery = 'Movie'; // You can change this to any default search term
+    const defaultQuery = 'Movie';
     fetchMovies(defaultQuery);
   }, []);
 
@@ -39,7 +39,7 @@ function SearchPage() {
     e.preventDefault();
   
     if (query.trim() === '') {
-      const defaultQuery = 'Movie'; // Use the same default query
+      const defaultQuery = 'Movie';
       fetchMovies(defaultQuery);
     } else {
       fetchMovies(query);
@@ -89,7 +89,7 @@ function SearchPage() {
         type={notification.type}
         onClose={() => setNotification({ message: '', type: '' })}
       />
-      {/* Search Form */}
+      {/*search*/}
       <form onSubmit={handleSearch} className="flex">
         <input
           type="text"
@@ -101,12 +101,12 @@ function SearchPage() {
         <button className="bg-red-900 text-white p-2 rounded-sm">search</button>
       </form>
   
-      {/* Loading Indicator */}
-      {loading && <p>Loading...</p>}
-      {/* Error Message */}
+      {/*load*/}
+      {loading && <p className="text-red-900">loading...</p>}
+      {/*error*/}
       {error && <p className="text-red-500">{error}</p>}
   
-      {/* Movies List */}
+      {/*movies*/}
       {!loading && !error && (
         <div className="mt-4">
           {movies.length > 0 ? (
@@ -124,20 +124,14 @@ function SearchPage() {
                   <p>{movie.Year}</p>
                 </div>
                 <div className="flex-shrink-0">
-  <button
-    onClick={() => handleBookmark(movie)}
-    className="bg-green-900  rounded-lg text-white p-2 ml-2"
-  >
+  <button onClick={() => handleBookmark(movie)} className="bg-green-900  rounded-lg text-white p-2 ml-2">
     bookmark
   </button>
-  <button
-    onClick={() => handleAddReview(movie)}
-    className="bg-yellow-600 text-white rounded-lg p-2 ml-2"
-  >
+  <button onClick={() => handleAddReview(movie)} className="bg-yellow-600 text-white rounded-lg p-2 ml-2">
     review
   </button>
 </div>
-              </div>
+</div>
             ))
           ) : (
             <p text-red-900>no movies found.</p>
@@ -147,6 +141,6 @@ function SearchPage() {
     </div>
   );
   
-          }
+}
 
 export default SearchPage;
